@@ -1,0 +1,59 @@
+<html ng-app="price">
+<head>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="../js/lodash.compat.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</head>
+<body>
+    <div ng-controller="Calculator">
+        <h1>Per month</h1>
+        <div class="price-matrix container">
+            <div class="dimensions column">
+                <div class="bold">Service Name</div>
+                <div class="bold">Unit</div>
+                <div>outbound transfer(< 10TB) /GB</div>
+                <div>transaction DELETE /10000</div>
+                <div>transaction PUT    /10000</div>
+                <div>transaction GET    /10000</div>
+                <div>blob (0~1  TB) /GB</div>
+                <div>blob (1~50 TB) /GB</div>
+            </div>
+            <div class="values column">
+                <div class="service column" ng-repeat="service in services">
+                    <div class="bold">{{service.name}}</div>
+                    <div class="bold">{{service.unit}}</div>
+                    <div>{{service.price.outboundTransferPer1GB}}</div>
+                    <div>{{service.price.transactionDelPer10K}}</div>
+                    <div>{{service.price.transactionPutPer10K}}</div>
+                    <div>{{service.price.transactionGetPer10K}}</div>
+                    <div>{{service.price.blobLessThan1TB}}</div>
+                    <div>{{service.price.blobLessThan50TB}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="calculated-price container">
+            <div class="dimensions amounts column">
+                <div>outbound transfer(< 10TB) /GB<input type="text" ng-model="amounts.outboundTransferPer1GB"/></div>
+                <div>transaction DELETE /10000<input type="text" ng-model="amounts.transactionDelPer10K"/></div>
+                <div>transaction PUT    /10000<input type="text" ng-model="amounts.transactionPutPer10K"/></div>
+                <div>transaction GET    /10000<input type="text" ng-model="amounts.transactionGetPer10K"/></div>
+                <div>blob (1~50 TB) /GB<input type="text" ng-model="amounts.blobLessThan50TB"/></div>
+                <div>Summary (original)</div>
+                <div class="bold">Summary (as CNY)</div>
+            </div>
+            <div class="values column">
+                <div class="service column" ng-repeat="service in services">
+                    <div>{{service.calcPrice('outboundTransferPer1GB')}}</div>
+                    <div>{{service.calcPrice('transactionDelPer10K')}}</div>
+                    <div>{{service.calcPrice('transactionPutPer10K')}}</div>
+                    <div>{{service.calcPrice('transactionGetPer10K')}}</div>
+                    <div>{{service.calcPrice('blobLessThan50TB')}}</div>
+                    <div>{{service.calcSummary()}} {{service.unit}}</div>
+                    <div class="bold">{{service.calcSummary(true)}} CNY</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

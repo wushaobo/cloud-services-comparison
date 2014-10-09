@@ -1,0 +1,38 @@
+.container {
+    width: 1080px;
+    font-size: 18px;
+    line-height: 1.5em;
+    margin-left: 50px;
+}
+
+.container .column {
+    display: inline-block;
+}
+
+.container .dimensions {
+    width: 54%;
+}
+
+.container .values {
+    width: 45.5%;
+    text-align: right;
+}
+
+.container .values .service {
+    width: 33.3%;
+}
+
+.container .amounts input {
+    width: 50px;
+    text-align: right;
+    margin-left: 10px;
+}
+
+.container .bold {
+    font-weight: bold;
+}
+
+.container .values .service > div,
+.container .dimensions > div {
+    border-bottom: 1px solid dimgrey;
+}
