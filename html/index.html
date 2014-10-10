@@ -44,11 +44,11 @@
                     <div class="bold">Summary (as CNY)</div>
                 </div>
                 <div class="column amounts">
-                    <div>&nbsp;<input type="text" ng-model="amounts.outboundTransferPer1GB"/></div>
-                    <div>&nbsp;<input type="text" ng-model="amounts.transactionDelPer10K"/></div>
-                    <div>&nbsp;<input type="text" ng-model="amounts.transactionPutPer10K"/></div>
-                    <div>&nbsp;<input type="text" ng-model="amounts.transactionGetPer10K"/></div>
-                    <div>&nbsp;<input type="text" ng-model="amounts.blobLessThan50TB"/></div>
+                    <div>&nbsp;<input type="number" min="1" ng-model="amounts.outboundTransferPer1GB"/></div>
+                    <div>&nbsp;<input type="number" min="1" ng-model="amounts.transactionDelPer10K"/></div>
+                    <div>&nbsp;<input type="number" min="1" ng-model="amounts.transactionPutPer10K"/></div>
+                    <div>&nbsp;<input type="number" min="1" ng-model="amounts.transactionGetPer10K"/></div>
+                    <div>&nbsp;<input type="number" min="1" ng-model="amounts.blobLessThan50TB"/></div>
                     <div>&nbsp;</div>
                     <div>&nbsp;</div>
                 </div>
