@@ -33,14 +33,25 @@
             </div>
         </div>
         <div class="calculated-price container">
-            <div class="dimensions amounts column">
-                <div>outbound transfer(< 10TB) /GB<input type="text" ng-model="amounts.outboundTransferPer1GB"/></div>
-                <div>transaction DELETE /10000<input type="text" ng-model="amounts.transactionDelPer10K"/></div>
-                <div>transaction PUT    /10000<input type="text" ng-model="amounts.transactionPutPer10K"/></div>
-                <div>transaction GET    /10000<input type="text" ng-model="amounts.transactionGetPer10K"/></div>
-                <div>blob (1~50 TB) /GB<input type="text" ng-model="amounts.blobLessThan50TB"/></div>
-                <div>Summary (original)</div>
-                <div class="bold">Summary (as CNY)</div>
+            <div class="dimensions column">
+                <div class="column labels">
+                    <div>outbound transfer(< 10TB) /GB</div>
+                    <div>transaction DELETE /10000</div>
+                    <div>transaction PUT    /10000</div>
+                    <div>transaction GET    /10000</div>
+                    <div>blob (1~50 TB) /GB</div>
+                    <div>Summary (original)</div>
+                    <div class="bold">Summary (as CNY)</div>
+                </div>
+                <div class="column amounts">
+                    <div>&nbsp;<input type="text" ng-model="amounts.outboundTransferPer1GB"/></div>
+                    <div>&nbsp;<input type="text" ng-model="amounts.transactionDelPer10K"/></div>
+                    <div>&nbsp;<input type="text" ng-model="amounts.transactionPutPer10K"/></div>
+                    <div>&nbsp;<input type="text" ng-model="amounts.transactionGetPer10K"/></div>
+                    <div>&nbsp;<input type="text" ng-model="amounts.blobLessThan50TB"/></div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                </div>
             </div>
             <div class="values column">
                 <div class="service column" ng-repeat="service in services">

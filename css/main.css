@@ -22,17 +22,21 @@
     width: 33.3%;
 }
 
+.container .dimensions .labels,
+.container .dimensions .amounts {
+    width: 49.5%;
+}
+
 .container .amounts input {
     width: 50px;
     text-align: right;
-    margin-left: 10px;
 }
 
 .container .bold {
     font-weight: bold;
 }
 
-.container .values .service > div,
-.container .dimensions > div {
+.container .values .service div:not(.column),
+.container .dimensions div:not(.column) {
     border-bottom: 1px solid dimgrey;
 }
