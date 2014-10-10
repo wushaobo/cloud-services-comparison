@@ -1,0 +1,42 @@
+.container {
+    width: 1080px;
+    font-size: 18px;
+    line-height: 1.5em;
+    margin-left: 50px;
+}
+
+.container .column {
+    display: inline-block;
+}
+
+.container .dimensions {
+    width: 54%;
+}
+
+.container .values {
+    width: 45.5%;
+    text-align: right;
+}
+
+.container .values .service {
+    width: 33.3%;
+}
+
+.container .dimensions .labels,
+.container .dimensions .amounts {
+    width: 49.5%;
+}
+
+.container .amounts input {
+    width: 80px;
+    text-align: right;
+}
+
+.container .bold {
+    font-weight: bold;
+}
+
+.container .values .service div:not(.column),
+.container .dimensions div:not(.column) {
+    border-bottom: 1px solid dimgrey;
+}
